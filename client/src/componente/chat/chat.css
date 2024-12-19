@@ -1,0 +1,105 @@
+/* Contenedor principal del chat */
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 60vh;
+    padding: 40px;
+    background-color: #f9f9f9; /* Color de fondo suave */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  }
+  
+  /* Contenedor para el nombre de usuario */
+  .username-container {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Estilo de la etiqueta del nombre de usuario */
+  .username-container label {
+    margin-right: 10px;
+    font-weight: bold;
+  }
+  
+  .msj {
+    margin-right: 10px;
+    font-weight: bold;
+  }
+  /* Estilo del input del nombre de usuario */
+  .username-container input {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Lista de mensajes */
+  .messages {
+    list-style: none; /* Quitar viñetas */
+    padding: 0;
+    margin: 0;
+    overflow-y: auto; /* Scroll vertical para mensajes largos */
+    flex: 1;
+    background-color: #ffffff; /* Fondo blanco */
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1); /* Sombra interna */
+  }
+  
+  /* Estilos individuales para cada mensaje */
+  .messages li {
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #e6f7ff; /* Fondo suave para los mensajes */
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    max-width: 90%; /* Ancho máximo de los mensajes */
+    word-wrap: break-word; /* Ajuste de palabras */
+  }
+  
+  /* Contenedor del formulario de entrada */
+  .input-container {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  /* Campo de entrada de texto */
+  .input-container input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px; /* Bordes redondeados en la izquierda */
+    outline: none;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  }
+  
+  /* Botón de enviar */
+  .perri {
+    padding: 10px 10px;
+    border: none;
+    background-color: #007bff; /* Color del botón */
+    color: white;
+    border-radius: 0 5px 5px 0; /* Bordes redondeados en la derecha */
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    transition: background-color 0.3s ease; /* Transición suave */
+  }
+  
+  /* Efecto hover para el botón de enviar */
+  .perri:hover {
+    background-color: #0056b3; /* Color más oscuro al hacer hover */
+  }
+  
+  .texter{
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+
+  }
