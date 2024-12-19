@@ -5,7 +5,7 @@ const fs = require('fs');
 const path = require('path');
 const app = express();
 const server = http.createServer(app);
-const wss = new WebSocket.Server({ server, path: '/ws' }); // Asegúrate de que la ruta sea correcta
+const wss = new WebSocket.Server({ server, path: '/ws' });
 
 const messagesFilePath = path.join(__dirname, 'messages.json');
 
@@ -30,6 +30,13 @@ const saveMessage = (message) => {
   fs.writeFileSync(messagesFilePath, JSON.stringify(messages));
 };
 
+const deleteOldMessages = () => {
+  const messages = getMessages();
+  const now = Date.now();
+  const newMessages = messages.filter(msg => (now - new Date(msg.timestamp).getTime()) < 30 * 60 * 1000); // 30 minutos en milisegundos
+  fs.writeFileSync(messagesFilePath, JSON.stringify(newMessages));
+};
+
 app.use(express.static('public'));
 
 wss.on('connection', (ws) => {
@@ -48,6 +55,9 @@ wss.on('connection', (ws) => {
 
   ws.send(JSON.stringify({ type: 'init', messages: getMessages() }));
 });
+
+// Ejecutar la función para borrar mensajes antiguos cada 10 minutos
+setInterval(deleteOldMessages, 10 * 60 * 1000);
 
 server.listen(PORT, () => {
   console.log(`Servidor escuchando en el puerto ${PORT}`);
