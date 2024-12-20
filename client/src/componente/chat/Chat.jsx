@@ -1,10 +1,12 @@
 import { useState, useEffect, useRef } from 'react';
+import { useLocation } from 'react-router-dom';
 import "./chat.css";
 
 const Chat = () => {
+  const location = useLocation();
+  const username = location.state?.username ?? 'Anónimo';
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
-  const [username, setUsername] = useState('');
   const socketRef = useRef(null);
 
   useEffect(() => {
@@ -48,23 +50,24 @@ const Chat = () => {
     setInput('');
   };
 
+  const getColorForUser = (user) => {
+    const colors = [
+      '#FFC857', '#E9724C', '#C5283D', '#481D24', '#255F85',
+      '#64B6AC', '#3D5A80', '#98C1D9', '#EE6C4D', '#293241'
+    ];
+    const hash = user.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+    return colors[hash % colors.length];
+  };
+
   return (
     <div className="chat-container">
       <ul className="messages">
         {messages.map((msg, index) => (
-          <li key={index}><b>{msg.timestamp} {msg.username}:</b> {msg.text}</li>
+          <li key={index} className="message" style={{ backgroundColor: getColorForUser(msg.username) }}>
+            <b>{msg.timestamp} {msg.username}:</b> {msg.text}
+          </li>
         ))}
       </ul>
-      <div className="username-container">
-        <label htmlFor="username">Nombre:</label>
-        <input
-          id="username"
-          type="text"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          placeholder="Ingresa tu nombre"
-        />
-      </div>
       <form className="input-container" onSubmit={sendMessage}>
         <label className="msj">Mensaje:</label>
         <textarea
