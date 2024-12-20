@@ -2,13 +2,15 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './home.css'; // Asumiendo que tienes un archivo CSS para los estilos
 
-function Home() {
-  const [username, setUsername] = useState('');
+// eslint-disable-next-line react/prop-types
+function Home({ setUsername }) {
+  const [localUsername, setLocalUsername] = useState('');
   const navigate = useNavigate();
 
   const handleChat = () => {
-    if (username.trim() !== '') {
-      navigate('/chat', { state: { username } });
+    if (localUsername.trim() !== '') {
+      setUsername(localUsername);
+      navigate('/chat', { state: { username: localUsername } });
     } else {
       alert('Por favor, ingresa tu nombre');
     }
@@ -18,8 +20,8 @@ function Home() {
     <div className="home-container">
       <input
         type="text"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
+        value={localUsername}
+        onChange={(e) => setLocalUsername(e.target.value)}
         placeholder="Ingresa tu nombre"
         className="input-field"
       />

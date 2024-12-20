@@ -63,7 +63,7 @@ const Chat = () => {
     <div className="chat-container">
       <ul className="messages">
         {messages.map((msg, index) => (
-          <li key={index} className="message" style={{ backgroundColor: getColorForUser(msg.username) }}>
+          <li key={index} className="message" style={{ backgroundColor: getColorForUser(msg.username), color: 'white' }}>
             <b>{msg.timestamp} {msg.username}:</b> {msg.text}
           </li>
         ))}

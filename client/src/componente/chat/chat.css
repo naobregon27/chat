@@ -1,106 +1,95 @@
 /* Contenedor principal del chat */
 .chat-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 60vh;
-    padding: 40px;
-    background-color: #f9f9f9; 
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Contenedor para el nombre de usuario */
-  .username-container {
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-  }
-  
-  /* Estilo de la etiqueta del nombre de usuario */
-  .username-container label {
-    margin-right: 10px;
-    font-weight: bold;
-  }
-  
-  .msj {
-    margin-right: 10px;
-    font-weight: bold;
-  }
-  /* Estilo del input del nombre de usuario */
-  .username-container input {
-    width: 70%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Lista de mensajes */
-  .messages {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    overflow-y: auto;
-    flex: 1;
-    background-color: #ffffff;
-    border-radius: 8px;
-    padding: 10px;
-    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Estilos individuales para cada mensaje */
-  .messages li {
-    padding: 10px;
-    margin: 10px 0;
-    background-color: #e6f7ff;
-    border-radius: 5px;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-    max-width: 90%;
-    word-wrap: break-word;
-  }
-  
-  /* Contenedor del formulario de entrada */
-  .input-container {
-    display: flex;
-    align-items: center;
-    margin-top: 10px;
-  }
-  
-  /* Campo de entrada de texto */
-  .input-container input {
-    flex: 1;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px 0 0 5px;
-    outline: none;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Botón de enviar */
-  .perri {
-    margin-top: 10px;
-    padding: 10px 10px;
-    border: none;
-    background-color: #007bff; 
-    color: white;
-    border-radius: 0 5px 5px 0; 
-    cursor: pointer;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease; 
-  }
-  
-  /* Efecto hover para el botón de enviar */
-  .perri:hover {
-    background-color: #0056b3;
-  }
-  
-  .texter{
-    width: 95%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 60vh;
+  padding: 20px;
+  background-color: #f9f9f9; 
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
 
-  }
+/* Contenedor para el nombre de usuario */
+.username-container {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Estilo de la etiqueta del nombre de usuario */
+.username-container label, .msj {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+/* Estilo del input del nombre de usuario */
+.username-container input {
+  flex: 1;
+  min-width: 200px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+}
+
+/* Lista de mensajes */
+.messages {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow-y: auto;
+  flex: 1;
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos individuales para cada mensaje */
+.messages li {
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  max-width: 90%;
+  word-wrap: break-word;
+  color: white; /* Letras siempre blancas */
+}
+
+/* Contenedor del formulario de entrada */
+.input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin-top: 10px;
+}
+
+.input-container .texter {
+  width: 97%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+}
+
+.input-container .perri {
+  padding: 10px;
+  background-color: #007bff; 
+  color: white;
+  border: none;
+  border-radius: 5px; 
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.input-container .perri:hover {
+  background-color: #0056b3;
+}

@@ -4,17 +4,16 @@
     align-items: center;
     justify-content: center;
     height: 10vh;
-
+    padding: 20px;
   }
   
   .input-field {
     width: 80%;
     padding: 10px;
     margin-bottom: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid #381e1e;
     border-radius: 10px;
     font-size: 16px;
-    border:hsl(from color h s l);
   }
   
   .chat-button {
@@ -30,5 +29,11 @@
   
   .chat-button:hover {
     background-color: #005bb5;
+  }
+  
+  @media (max-width: 768px) {
+    .input-field, .chat-button {
+      width: 100%;
+    }
   }
   

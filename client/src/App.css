@@ -1,13 +1,16 @@
-
 body {
-  background: linear-gradient(135deg, #0fcde6 0%, #fad0c4 100%); /* Degradado de color */
+  background: linear-gradient(135deg, #0fcde6 0%, #fad0c4 100%);
   margin: 0;
   font-family: Arial, sans-serif;
+  height: 100vh; /* Asegura que el fondo cubra toda la pantalla */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
 
 #root {
   max-width: 1280px;
+  width: 100%; /* Asegura que se ajuste al ancho de la pantalla */
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
@@ -20,9 +23,11 @@ body {
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -43,11 +48,10 @@ body {
   }
 }
 
-
 .card {
   padding: 2em;
   background: white;
-  border-radius: 15px; /* Bordes redondeados */
+  border-radius: 15px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -57,128 +61,44 @@ body {
 
 /* Estilo para la barra de navegación */
 nav.navbar {
-  background-color: #4CAF50; /* Fondo verde */
+  background-color: #4CAF50;
   overflow: hidden;
-  padding: 10px 250px;
-  border-radius: 15px; /* Borde redondeado */
+  padding: 10px 20px; /* Ajuste para mejor responsividad */
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
 }
 
-/* Estilo para los enlaces en la barra de navegación */
 nav.navbar a {
-  float: left;
   display: block;
-  color: white; 
+  color: white;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
   font-size: 18px;
   border-radius: 10px;
+  margin: 0 5px;
 }
 
-/* Estilo para los enlaces al hacer hover */
 nav.navbar a:hover {
   background-color: #ddd;
-  color: black; 
+  color: black;
   border-radius: 10px;
 }
 
-/* Estilo para los enlaces activos */
 nav.navbar a.active {
   background-color: #3e8e41;
   color: white;
-  border-radius: 10px; 
-}
-
-/* Contenedor principal del chat */
-.chat-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 60vh;
-  padding: 40px;
-  background-color: #f9f9f9;
-  border: 1px solid #ccc;
-  border-radius: 15px; 
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-/* Contenedor para el nombre de usuario */
-.username-container {
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-}
-
-/* Estilo de la etiqueta del nombre de usuario */
-.username-container label {
-  margin-right: 10px;
-  font-weight: bold;
-}
-
-/* Estilo del input del nombre de usuario */
-.username-container input {
-  width: 70%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 15px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-}
-
-/* Lista de mensajes */
-.messages {
-  list-style: none; 
-  padding: 0;
-  margin: 0;
-  overflow-y: auto; 
-  flex: 1;
-  background-color: #ffffff;
-  border-radius: 15px; 
-  padding: 10px;
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
-}
-
-/* Estilos individuales para cada mensaje */
-.messages li {
-  padding: 10px;
-  margin: 10px 0;
-  background-color: #6fbfe4; 
   border-radius: 10px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); 
-  max-width: 90%; 
-  word-wrap: break-word;
 }
 
-/* Contenedor del formulario de entrada */
-.input-container {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  margin-top: 10px;
-}
+@media (max-width: 768px) {
+  nav.navbar a {
+    padding: 10px 14px;
+    font-size: 16px;
+  }
 
-/* Campo de entrada de texto */
-.input-container input {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 15px; 
-  outline: none;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); 
-  margin-bottom: 5px; 
-}
-
-/* Botón de enviar */
-.input-container button {
-  padding: 10px 15px;
-  border: none;
-  background-color: #007bff; 
-  color: white;
-  border-radius: 15px; 
-  cursor: pointer;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease; 
-}
-
-
-.input-container button:hover {
-  background-color: #0056b3;
+  nav.navbar {
+    padding: 10px 10px; /* Ajuste para dispositivos móviles */
+  }
 }
